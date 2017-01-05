@@ -2,8 +2,12 @@
 
 Node::Node(Student* s){
 	student = s;
-	//nextNode =  new Node(s);
+	nextNode =  NULL;
 
+}
+
+Node::~Node(){
+	delete student;
 }
 
 void Node::setNext(Node* n){

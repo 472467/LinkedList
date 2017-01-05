@@ -17,16 +17,11 @@ int main(){
 	Student* s = new Student();
 	Node* n = new Node(s);
 	
-	std::cout << s->getName() << std::endl;
-	
-	char* lul = new char[120];
-	strcpy(lul, "not funny kiddo");
+	std::cout << s->getName() << std::endl;//works
 	
 
 	Student* s2 = new Student();
-	s2->setName(lul);
-	
-	std::cout << s2->getName() << std::endl;
+	s2->setName("not funny kiddo");//works
 	
 	
 	
@@ -37,24 +32,29 @@ int main(){
 	
 	Student* s3 = new Student();
 	
-	strcpy(lul, "howdy pardner");
-	s3->setName(lul);
+	
+	s3->setName("howdy pardner");
 	
 	Node* n3 = new Node(s3);
 	n3->setNext(n2);
-	Node* temp = n->getNext();
-	Student* tmpStudent = temp->getStudent();
-	
-	
-	
-	std::cout << tmpStudent->getName() << std::endl;
-	
 	n->setNext(n3);
+	
+	
+	
+	
+	std::cout << ((n->getNext())->getStudent())->getName() << std::endl;//all these work
+	
+	n->setNext(n2);
 	 
 	std::cout << ((n->getNext())->getStudent())->getName()<<std::endl;
 	
-	std::cin.ignore();
+	Student* deadStudent = n->getStudent();
 	
+	std:: cout <<((n->getStudent())->getName()) << std::endl;
+	
+	delete n;
+	
+	std::cout <<(deadStudent->getName());
 	
 	
 	//return 0;

@@ -12,5 +12,4 @@ char* Student::getName(){
 
 void Student::setName(char* n){
 	strcpy(name, n);
-	std::cout << name << std::endl;
 }

@@ -18,6 +18,7 @@ class Node{//has a student and a pointer to the next Node
 	
 	public:
 		Node(Student*);
+		~Node();
 		Node* getNext();
 		void setNext(Node*);//sets next node
 		Student* getStudent();//
